@@ -109,12 +109,23 @@
                                     <input type="number" class="form-control" id="txtIdade">
                                 </div>
                                 <div class="col-md-4">
+                                    <label for="cmbFaixaEtaria" class="form-label">Faixa Etária:</label>
+                                    <select class="form-select" aria-label="Faixa Etaria" id="cmbFaixaEtaria">
+                                        <option selected>Selecionar</option>
+                                        <option value="2">Até 30 anos</option>
+                                        <option value="0">31 a 40 anos</option>
+                                        <option value="1">41 a 50 anos</option>
+                                        <option value="3">51 a 60 anos</option>
+                                        <option value="4">Maior que 60 anos</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
                                     <label for="cmbEscolaridade" class="form-label">Escolaridade:</label>
                                     <select class="form-select" aria-label="Escolaridade" id="cmbEscolaridade">
                                         <option selected>Selecionar</option>
-                                        <option value="1">Superior Completo</option>
-                                        <option value="2">Superior Cursando</option>
-                                        <option value="3">Segundo Grau Completo</option>
+                                        <option value="0">Superior Completo</option>
+                                        <option value="1">Superior Cursando</option>
+                                        <option value="2">Segundo Grau Completo</option>
                                     </select>
                                 </div>
                                 <div class="col-md-4">
@@ -130,6 +141,100 @@
                                 <div class="col-md-4">
                                     <label for="txtQtdFilhos" class="form-label">Quantidade de Filhos</label>
                                     <input type="number" class="form-control" id="txtQtdFilhos">
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label for="rdbCasaSim" class="form-label">Possui Casa Própria?</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="rdbCasaSim">
+                                            <label class="form-check-label" for="rdbCasaSim">
+                                              Sim
+                                            </label>
+                                          </div>
+                                          <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="rdbCasaNao" checked>
+                                            <label class="form-check-label" for="rdbCasaNao">
+                                              Não
+                                            </label>
+                                          </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="txtValorTotalImoveis" class="form-label">Valor total de imóveis</label>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text">R$</span>
+                                            <input type="number" class="form-control" aria-label="Valor total de imóveis" id="txtValorTotalImoveis">
+                                            <span class="input-group-text">,00</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="txtQtdImoveis" class="form-label">Quantidade de Imóveis</label>
+                                        <input type="number" class="form-control" id="txtQtdImoveis">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label for="rdbRendaExtraSim" class="form-label">Possui renda extra?</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="rdbRendaExtraSim">
+                                            <label class="form-check-label" for="rdbRendaExtraSim">
+                                            Sim
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="rdbRendaExtraNao" checked>
+                                            <label class="form-check-label" for="rdbRendaExtraNao">
+                                            Não
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="txtValorRendaExtra" class="form-label">Valor Renda Extra</label>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text">R$</span>
+                                            <input type="number" class="form-control" aria-label="Valor total de imóveis" id="txtValorRendaExtra">
+                                            <span class="input-group-text">,00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="txtMesesEmprego" class="form-label">Meses no último emrego</label>
+                                    <input type="number" class="form-control" id="txtMesesEmprego">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="rdbTrabalhaSim" class="form-label">Trabalha atualmente?</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="rdbTrabalhaSim">
+                                        <label class="form-check-label" for="rdbTrabalhaSim">
+                                        Sim
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="rdbTrabalhaNao" checked>
+                                        <label class="form-check-label" for="rdbTrabalhaNao">
+                                        Não
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="txtSalario" class="form-label">Último/Atual Salário</label>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">R$</span>
+                                        <input type="number" class="form-control" aria-label="Último ou Atual Salário" id="txtSalario">
+                                        <span class="input-group-text">,00</span>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label for="txtQtdAutomoveis" class="form-label">Quantidade de Automóveis</label>
+                                    <input type="number" class="form-control" id="txtQtdAutomoveis">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="txtValorAutomoveis" class="form-label">Valor Total Fipe Automóveis</label>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">R$</span>
+                                        <input type="number" class="form-control" aria-label="Valor Total Fipe Automóveis" id="txtValorAutomoveis">
+                                        <span class="input-group-text">,00</span>
+                                    </div>
                                 </div>
                                 <hr>
                                 <div class="row g-4">
