@@ -24,3 +24,10 @@ pytz==2020.4
 six==1.15.0
 werkzeug==2.0
 zipp==3.4.0
+scikit-learn
+pandas
+scikit-learn
+numpy
+pytest
+jupyter
+matplotlib
