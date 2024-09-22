@@ -1,3 +1,4 @@
+let enderecoAPI = "http://192.168.1.6:5000/"
 function Calcular(){
     var selectedCasa = $('input[name="rdbCasa"]:checked');
     var selectedRenda = $('input[name="rdbRenda"]:checked');
@@ -20,5 +21,19 @@ function Calcular(){
     let qtdAutomoveis = $("#txtQtdAutomoveis").val();
     let valAutomoveis = $("#txtValorAutomoveis").val();
 
-    alert(trabalha);
+    let url = enderecoAPI + "get_credit?estado="+estado+"&idade="+idade+"&faixaEtaria="+faixaEtaria+"&escolaridade="+escolaridade+"&estadoCivil="+estadoCivil
+                            +"&qtdFilhos="+qtdFilhos+"&possuiCasa="+possuiCasa+"&valImoveis="+valImoveis+"&qtdImoveis="+qtdImoveis+"&rendaExtra="+rendaExtra
+                            +"&valRendaExtra="+valRendaExtra+"&valMesesEmprego="+valMesesEmprego+"&trabalha="+trabalha+"&valSalario="+valSalario+"&qtdAutomoveis="+qtdAutomoveis
+                            +"&valAutomoveis="+valAutomoveis;
+        fetch(url, {
+            method: 'get'
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            
+            alert(data.credit);
+        })
+        .catch((error) => {
+        console.error('Error:', error);
+        });
 }
