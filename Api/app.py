@@ -1,9 +1,10 @@
 from flask_openapi3 import OpenAPI, Info, Tag
 from flask import Flask, request, send_from_directory, render_template, redirect
+from urllib.parse import unquote
 from flask_swagger_ui import get_swaggerui_blueprint
 from sqlalchemy.exc import IntegrityError
-from model import Session
-from datetime import datetime
+from model import *
+from logger import logger
 from flask_cors import CORS
 
 info = Info(title="Minha API", version="1.0.0")
@@ -26,28 +27,38 @@ def home():
 
 @app.get('/get_credit', tags=[creditocliente_tag])
 def get_credit():
-    session = Session()
+    
 
     try:
-        estado = request.args.get('estado')
-        idade = request.args.get('idade')
-        faixaEtaria = request.args.get('faixaEtaria')
-        escolaridade = request.args.get('escolaridade')
-        estadoCivil = request.args.get('estadoCivil')
-        qtdFilhos = request.args.get('qtdFilhos')
-        possuiCasa = request.args.get('possuiCasa')
-        valImoveis = request.args.get('valImoveis')
-        qtdImoveis = request.args.get('qtdImoveis')
-        rendaExtra = request.args.get('rendaExtra')
-        valRendaExtra = request.args.get('valRendaExtra')
-        valMesesEmprego = request.args.get('valMesesEmprego')
-        trabalha = request.args.get('trabalha')
-        valSalario = request.args.get('valSalario')
-        qtdAutomoveis = request.args.get('qtdAutomoveis')
-        valAutomoveis = request.args.get('valAutomoveis')
-        return {"credit": estado + ","+ idade + ","+faixaEtaria+","+escolaridade+","+estadoCivil+","+qtdFilhos
-                +","+possuiCasa+","+valImoveis+","+qtdImoveis+","+rendaExtra+","+valRendaExtra+","+valMesesEmprego+","+trabalha+","+
-                valSalario+","+qtdAutomoveis+","+valAutomoveis}, 200
+        form = Cliente(
+            UF = int(request.args.get('estado')),
+            IDADE = int(request.args.get('idade')),
+            FAIXA_ETARIA = int(request.args.get('faixaEtaria')),
+            ESCOLARIDADE = int(request.args.get('escolaridade')),
+            ESTADO_CIVIL = int(request.args.get('estadoCivil')),
+            QT_FILHOS = int(request.args.get('qtdFilhos')),
+            CASA_PROPRIA = int(request.args.get('possuiCasa')),
+            VL_IMOVEIS = int(request.args.get('valImoveis')),
+            QT_IMOVEIS = int(request.args.get('qtdImoveis')),
+            OUTRA_RENDA = int(request.args.get('rendaExtra')),
+            OUTRA_RENDA_VALOR = int(request.args.get('valRendaExtra')),
+            TEMPO_ULTIMO_EMPREGO_MESES = int(request.args.get('valMesesEmprego')),
+            TRABALHANDO_ATUALMENTE = int(request.args.get('trabalha')),
+            ULTIMO_SALARIO = float(request.args.get('valSalario')),
+            QT_CARROS = int(request.args.get('qtdAutomoveis')),
+            VALOR_TABELA_CARROS = int(request.args.get('valAutomoveis'))
+            
+        )
+        # Preparando os dados para o modelo
+        X_input = PreProcessador.preparar_form(form)
+        # Carregando modelo
+        model_path = './MachineLearning/pipelines/pipeline_model.pkl'
+        # modelo = Model.carrega_modelo(ml_path)
+        modelo = Pipeline.carrega_pipeline(model_path)
+        # Realizando a predição
+        outcome = int(Model.preditor(modelo, X_input)[0])
+        retorno = "Score para o cliente: "+ str(outcome) + "."
+        return {"Analise" : retorno + " Recomendamos a disponibilização do crédito" if outcome >= 50 else retorno + "NÃO recomendamos a disponibilização do crédito"}, 200
 
     except Exception as e:
         error_msg = "Não foi possível executar: " + str(e)

@@ -31,7 +31,7 @@ function Calcular(){
         .then((response) => response.json())
         .then((data) => {
             
-            alert(data.credit);
+            alert(data.Analise);
         })
         .catch((error) => {
         console.error('Error:', error);
