@@ -40,5 +40,5 @@ Abra o [http://localhost:5000/#/](http://localhost:5000/#/) no navegador para ve
 Após se certificar de que a API está rodando corretamente, abra, no navegador o arquivo de FrontEnd, localizado na pasta Web/index.html.
 Ou clique com o botão direito do mouse no arquivo index.html, e clique na opção Open With Live Server (Necessário possuir a extensão Live Server intalada no seu VS Code).
 
-## Demonstração (MVP - FullStack Básico)
+## Demonstração
 Vídeo de demonstração: --
