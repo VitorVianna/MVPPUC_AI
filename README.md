@@ -3,6 +3,18 @@ Este projeto foi desenvolvido como MVP para a Disciplina **Qualidade de Software
 
 O objetivo foi desenvolver uma Machine Learning, uma API e um Front utilizando Python para calcular o Score de um determinado cliente para Bancos.
 
+Os notebooks estão localizados na pasta **Api/MachineLearning/notebooks/**
+Também localizados em:
+[ESSI_MVP-PUC-AI.ipynb](https://colab.research.google.com/drive/1n-Q8xlqkEDxzEEwr6WFWwO3rQYHxcV-i?usp=drive_link)
+> Realiza o tratamento dos dados, e cria os arquivos model.pkl, X_test_dataset_model.csv e y_test_dataset_model.csv
+[MVP-PUC-AI.ipynb](https://colab.research.google.com/drive/1_GK3txfanYfKa_4SXTzYDDsC6SDUXuRO?usp=drive_link)
+> Realiza o tratamento dos dados, e apresenta os diferentes tipos de algoritmos, bem como suas respostas aos testes de aprendizagem.
+
+O CSV contendo o Dataset está na pasta: **Api/MachineLearning/data/dados_credito.csv**
+Onde encontramos uma lista de informações de clientes e seus Scores.
+
+O FrontEnd foi desenvolvido utilizando HTML, JavaScript e Bootstrap.
+O BackEnd foi desenvolvido utilizando Python, e as bibliotecas Flask e Scikit-Learn principalmente.
 
 ## Como executar
 
@@ -41,4 +53,4 @@ Após se certificar de que a API está rodando corretamente, abra, no navegador 
 Ou clique com o botão direito do mouse no arquivo index.html, e clique na opção Open With Live Server (Necessário possuir a extensão Live Server intalada no seu VS Code).
 
 ## Demonstração
-Vídeo de demonstração: https://photos.app.goo.gl/TQSohEzJgEvt1bLS7
+Vídeo de demonstração: [Clique Aqui](https://photos.app.goo.gl/TQSohEzJgEvt1bLS7)
