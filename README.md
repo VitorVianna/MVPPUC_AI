@@ -5,9 +5,9 @@ O objetivo foi desenvolver uma Machine Learning, uma API e um Front utilizando P
 
 Os notebooks estão localizados na pasta **Api/MachineLearning/notebooks/**
 Também localizados em:
-[ESSI_MVP-PUC-AI.ipynb](https://colab.research.google.com/drive/1n-Q8xlqkEDxzEEwr6WFWwO3rQYHxcV-i?usp=drive_link)
+> [ESSI_MVP-PUC-AI.ipynb](https://colab.research.google.com/drive/1n-Q8xlqkEDxzEEwr6WFWwO3rQYHxcV-i?usp=drive_link)
 > Realiza o tratamento dos dados, e cria os arquivos model.pkl, X_test_dataset_model.csv e y_test_dataset_model.csv
-[MVP-PUC-AI.ipynb](https://colab.research.google.com/drive/1_GK3txfanYfKa_4SXTzYDDsC6SDUXuRO?usp=drive_link)
+> [MVP-PUC-AI.ipynb](https://colab.research.google.com/drive/1_GK3txfanYfKa_4SXTzYDDsC6SDUXuRO?usp=drive_link)
 > Realiza o tratamento dos dados, e apresenta os diferentes tipos de algoritmos, bem como suas respostas aos testes de aprendizagem.
 
 O CSV contendo o Dataset está na pasta: **Api/MachineLearning/data/dados_credito.csv**
