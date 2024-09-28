@@ -55,3 +55,8 @@ Ou clique com o botão direito do mouse no arquivo index.html, e clique na opç�
 
 ## Demonstração
 Vídeo de demonstração: [Clique Aqui](https://photos.app.goo.gl/TQSohEzJgEvt1bLS7)
+
+## Testes unitários
+> Instalar dependências: pip install -r requirements.txt
+
+> Executar dentro do diretório Api: python -m pytest

@@ -30,7 +30,7 @@ def test_modelo_lr():
     
     # Testando as métricas da Regressão Logística 
     # Modifique as métricas de acordo com seus requisitos
-    assert acuracia_lr >= 0.78 
+    assert acuracia_lr >= 0.85 
     # assert recall_lr >= 0.5 
     # assert precisao_lr >= 0.5 
     # assert f1_lr >= 0.5 
